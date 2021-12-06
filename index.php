@@ -37,7 +37,7 @@
                         echo "Oops! Something went wrong. Please try again later.";
                     }
                     // Close connection
-                    unset($pdo);
+                    unset($con);
                     ?>
                 </div>
             </div>        
