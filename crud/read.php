@@ -2,12 +2,12 @@
 // Check existence of id parameter before processing further
 if(isset($_GET["id"]) && !empty(trim($_GET["id"]))){
     // Include config file
-    require_once "config.php";
+    require_once "../config.php";
     
     // Prepare a select statement
     $sql = "SELECT * FROM employees WHERE id = :id";
     
-    if($stmt = $pdo->prepare($sql)){
+    if($stmt = $con->prepare($sql)){
         // Bind variables to the prepared statement as parameters
         $stmt->bindParam(":id", $param_id);
         
@@ -40,7 +40,7 @@ if(isset($_GET["id"]) && !empty(trim($_GET["id"]))){
     unset($stmt);
     
     // Close connection
-    unset($pdo);
+    unset($con);
 } else{
     // URL doesn't contain id parameter. Redirect to error page
     header("location: error.php");
@@ -79,7 +79,7 @@ if(isset($_GET["id"]) && !empty(trim($_GET["id"]))){
                         <label>Salary</label>
                         <p><b><?php echo $row["salary"]; ?></b></p>
                     </div>
-                    <p><a href="index.php" class="btn btn-primary">Back</a></p>
+                    <p><a href="../index.php" class="btn btn-primary">Back</a></p>
                 </div>
             </div>        
         </div>
