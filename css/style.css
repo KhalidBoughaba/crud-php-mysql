@@ -1,0 +1,23 @@
+body {
+  background: radial-gradient(farthest-side ellipse at 10% 0, #333867, #17193b);
+  height: 100vh;
+  color: rgba(244, 244, 245, 0.9) !important;
+  overflow: hidden;
+}
+
+.wrapper {
+  margin-top: 50px !important;
+  width: 600px;
+  margin: 0 auto;
+  background-color: rgb(51 56 103 / 50%);
+  padding: 15px;
+  border-radius: 10px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 3px 20px rgb(0 0 0 / 40%);
+}
+
+.form-control {
+  color: white !important;
+  background-color: #ffffff21 !important;
+  border: none !important;
+}

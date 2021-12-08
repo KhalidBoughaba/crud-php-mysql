@@ -18,9 +18,9 @@ if($result->rowCount() > 0){
                 echo "<td>" . $row['address'] . "</td>";
                 echo "<td>" . $row['salary'] . "</td>";
                 echo "<td>";
-                    echo '<a href="crud/read.php?id='. $row['id'] .'" class="mr-3" title="View Record" data-toggle="tooltip"><span class="fa fa-eye"></span></a>';
-                    echo '<a href="crud/update.php?id='. $row['id'] .'" class="mr-3" title="Update Record" data-toggle="tooltip"><span class="fa fa-pencil"></span></a>';
-                    echo '<a href="crud/delete.php?id='. $row['id'] .'" title="Delete Record" data-toggle="tooltip"><span class="fa fa-trash"></span></a>';
+                    echo '<a href="../crud/read.php?id='. $row['id'] .'" class="mr-3" title="View Record" data-toggle="tooltip"><span class="fa fa-eye"></span></a>';
+                    echo '<a href="../crud/update.php?id='. $row['id'] .'" class="mr-3" title="Update Record" data-toggle="tooltip"><span class="fa fa-pencil"></span></a>';
+                    echo '<a href="../crud/delete.php?id='. $row['id'] .'" title="Delete Record" data-toggle="tooltip"><span class="fa fa-trash"></span></a>';
                 echo "</td>";
             echo "</tr>";
         }

@@ -1,47 +1,87 @@
+<?php
+
+?>
 <!DOCTYPE html>
-<html lang="en">
+<html>
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="./index.css">
-    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <script>
-        $(document).ready(function(){
-            $('[data-toggle="tooltip"]').tooltip();   
-        });
-    </script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Admin Login Form</title>
+    <link href="https://fonts.googleapis.com/css?family=Poppins:600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="../css/login.css">
+
 </head>
+
 <body>
-    <div class="wrapper">
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="mt-5 mb-3 clearfix">
-                        <h2 class="pull-left">Employees Details</h2>
-                        <a href="create.php" class="btn btn-success pull-right">Add New Employee</a>
+
+    <div class="container">
+        <div class="login-content">
+            <form id="loginForm" method="POST" action="api/login.php">
+                <img src='https://avataaars.io/?avatarStyle=Circle&topType=ShortHairShortCurly&accessoriesType=Sunglasses&hairColor=Black&facialHairType=Blank&clotheType=Hoodie&clotheColor=Heather&eyeType=Hearts&eyebrowType=DefaultNatural&mouthType=Smile&skinColor=Light'
+/>
+                <h2 class="title">Bonjour</h2>
+                <div class="input-div one">
+                    <div class="i">
+                        <i class="fas fa-user"></i>
                     </div>
-                    <?php 
-                    // Include config file
-                    require_once "config.php";
-                    // Attempt select query execution
-                    $sql ="SELECT * FROM employees";
-                    if($result = $con->query($sql)){
-                        include "table.php";
-                    } else{
-                        echo "Oops! Something went wrong. Please try again later.";
-                    }
-                    // Close connection
-                    unset($con);
-                    ?>
+                    <div class="div">
+                        <h5>Nom d'utilisateur</h5>
+                        <input id="username" type="text" name="username" class="input">
+                    </div>
                 </div>
-            </div>        
+                <div class="input-div pass">
+                    <div class="i">
+                        <i class="fas fa-lock"></i>
+                    </div>
+                    <div class="div">
+                        <h5>Mot de passe</h5>
+                        <input id="password" type="password" name="password" id="password" class="input">
+                    </div>
+
+                </div>
+
+
+                <!-- An element to toggle between password visibility -->
+                <label>
+                    <input type="checkbox" id="show_pass" onclick="myFunction()">
+                    Show Password</label>
+
+                <input type="submit" class="btn" value="Connexion">
+            </form>
         </div>
     </div>
+    <script type="text/javascript" src="../js/jquery-3.6.0.min.js"></script>
+    <script type="text/javascript" src="../js/login.js"></script>
+    <script>
+        const inputs = document.querySelectorAll(".input");
+
+
+function addcl() {
+	let parent = this.parentNode.parentNode;
+	parent.classList.add("focus");
+}
+
+function remcl() {
+	let parent = this.parentNode.parentNode;
+	if (this.value == "") {
+		parent.classList.remove("focus");
+	}
+}
+
+
+inputs.forEach(input => {
+	input.addEventListener("focus", addcl);
+	input.addEventListener("blur", remcl);
+});
+function myFunction() {
+	var x = document.getElementById("password");
+	if (x.type === "password") {
+	  x.type = "text";
+	} else {
+	  x.type = "password";
+	}
+  }
+    </script>
 </body>
+
 </html>
