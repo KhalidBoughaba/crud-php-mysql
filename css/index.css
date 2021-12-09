@@ -1,6 +1,17 @@
 body {
   background: radial-gradient(farthest-side ellipse at 10% 0, #333867, #17193b);
   height: 100vh;
+  position: relative;
+}
+
+body::before {
+  content: "";
+  position: absolute;
+  background-image: url(./line_bubble.svg);
+  left: 268px;
+  top: 0px;
+  width: 79%;
+  height: 100%;
 }
 
 .wrapper {

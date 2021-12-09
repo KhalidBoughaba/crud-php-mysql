@@ -7,7 +7,7 @@
 body {
   font-family: "Poppins", sans-serif;
   overflow: hidden;
-  background: radial-gradient(farthest-side ellipse at 10% 0,#333867,#17193b);
+  background: radial-gradient(farthest-side ellipse at 10% 0, #333867, #17193b);
   color: white;
 }
 
@@ -160,7 +160,7 @@ a:hover {
   border-radius: 25px;
   outline: none;
   border: none;
-  background-image: linear-gradient(to right, #80bd3c, #80bd3c, #80bd3c);
+  background-color: #3979f6;
   background-size: 200%;
   font-size: 1.2rem;
   color: #fff;
