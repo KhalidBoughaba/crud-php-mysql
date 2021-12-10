@@ -8,6 +8,7 @@ $name_err = $address_err = $salary_err = "";
  
 // Processing form data when form is submitted
 if($_SERVER["REQUEST_METHOD"] == "POST"){
+    
     // Validate name
     $input_name = trim($_POST["name"]);
     if(empty($input_name)){

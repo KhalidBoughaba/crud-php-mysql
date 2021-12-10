@@ -22,13 +22,14 @@ h2 {
   color: rgba(244, 244, 245, 0.9) !important;
 }
 .btn {
-  background-color: #3979f6;
-  color: white;
+  background-color: #3979f63b;
+  color: #3979f6;
+  border: 2px solid #3979f6;
   box-shadow: 0 3px 20px rgb(0 0 0 / 80%);
 }
 a.btn.pull-right:hover {
   transform: scale(0.97);
-  color: white;
+  color: #3979f6;
 }
 .table {
   color: #ffffffb3;
@@ -47,4 +48,10 @@ thead th {
 
 table tr td:last-child {
   width: 120px;
+}
+
+.btn-outline-danger {
+  color: #dc3545 !important;
+  border-color: #dc3545;
+  background: #ff7d7d1c !important;
 }

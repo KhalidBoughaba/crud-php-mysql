@@ -15,19 +15,9 @@
         $(document).ready(function(){
             $('[data-toggle="tooltip"]').tooltip();   
         });
-
-        let logout = document.querySelector(".logout");
-        logout.addEventListener('click', ()=>{
-
-        })
     </script>
 </head>
 <body>
-    <div>
-        <form action="/home/logout.php" method="post">
-            <button type="submit" class="btn logout">Logout</button>
-        </form>
-    </div>
     <div class="wrapper">
         <div class="container-fluid">
             <div class="row">
@@ -51,6 +41,11 @@
                     ?>
                 </div>
             </div>        
+            <div>
+                <form action="../api/logout.php" method="post">
+                    <button type="submit" class="btn btn-outline-danger logout">Logout</button>
+                </form>
+            </div>
         </div>
     </div>
 </body>
